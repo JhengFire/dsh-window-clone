@@ -60,5 +60,14 @@
   },
   "bugs": {
     "url": "https://github.com/JhengFire/dsh-window-clone/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/schemastery": {
+      "optional": false
+    }
   }
 }
