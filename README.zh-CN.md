@@ -8,9 +8,11 @@
 
 `dsh-window-clone` 是 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的插件，把"再开一份完整 Harness"变成一次点击。在设置里输入窗口名，点「创建窗口」，就得到一个独立的 Harness 窗口 —— 已经登录、独立于原窗口、标题由你决定。两个窗口驱动同一个 Harness —— 同一份会话、同一份工作区，实时同步 —— 但各自保留自己的面板布局，所以可以一边全屏文件、一边全屏终端，各就各位。
 
+```bash
+dsh plugin --profile web add dsh-window-clone
 ```
-dsh plugin --profile web add git+https://github.com/JhengFire/dsh-window-clone.git
-```
+
+![独立窗口设置页](docs/settings.png)
 
 ---
 

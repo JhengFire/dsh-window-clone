@@ -8,9 +8,11 @@ English · [简体中文](README.zh-CN.md)
 
 `dsh-window-clone` is a [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) plugin that turns "open another full Harness" into one click. Type a window name in Settings, press **Create window**, and a separate Harness window appears — already signed in, independent of the original, with a title you chose. Both windows drive the same Harness — same sessions, same workspace, live — and each keeps its own panel layout, so each can put a different panel into full screen and stay there.
 
+```bash
+dsh plugin --profile web add dsh-window-clone
 ```
-dsh plugin --profile web add git+https://github.com/JhengFire/dsh-window-clone.git
-```
+
+![The Separate windows settings page](docs/settings.png)
 
 ---
 
