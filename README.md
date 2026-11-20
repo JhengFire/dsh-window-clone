@@ -2,7 +2,7 @@
 
 English · [简体中文](README.zh-CN.md)
 
-[![license](https://img.shields.io/github/license/JhengFire/dsh-window-clone)](LICENSE) [![release](https://img.shields.io/github/v/release/JhengFire/dsh-window-clone)](https://github.com/JhengFire/dsh-window-clone/releases)
+[![npm](https://img.shields.io/npm/v/dsh-window-clone)](https://www.npmjs.com/package/dsh-window-clone) [![downloads](https://img.shields.io/npm/dm/dsh-window-clone)](https://www.npmjs.com/package/dsh-window-clone) [![license](https://img.shields.io/github/license/JhengFire/dsh-window-clone)](LICENSE) [![release](https://img.shields.io/github/v/release/JhengFire/dsh-window-clone)](https://github.com/JhengFire/dsh-window-clone/releases)
 
 **Open a second view of DeepSeek Harness and work in two places at once.**
 
@@ -45,8 +45,24 @@ Panel full screen is DSH's own control, at the top-right corner of the right-han
 ## Install
 
 ```bash
-dsh plugin --profile web add git+https://github.com/JhengFire/dsh-window-clone.git
+dsh plugin --profile web add dsh-window-clone
 dsh web
+```
+
+Restart Harness (or run `dsh web` again) and open Settings — **Separate windows** appears between *Market* and *MCP*.
+
+### Other ways to install
+
+From GitHub, for a version the registry does not carry yet:
+
+```bash
+dsh plugin --profile web add git+https://github.com/JhengFire/dsh-window-clone.git
+```
+
+Pin a release:
+
+```bash
+dsh plugin --profile web add git+https://github.com/JhengFire/dsh-window-clone.git#v1.0.0
 ```
 
 From a local checkout:
@@ -55,7 +71,13 @@ From a local checkout:
 dsh plugin --profile web add ./dsh-window-clone
 ```
 
-Restart Harness (or run `dsh web` again) and open Settings — **Separate windows** appears between *Market* and *MCP*.
+### Behind a slow registry
+
+The package is mirrored to npmmirror automatically, so it installs through a China-mainland mirror without any change:
+
+```bash
+npm install dsh-window-clone --registry=https://registry.npmmirror.com
+```
 
 ## How it works
 

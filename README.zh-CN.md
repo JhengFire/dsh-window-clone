@@ -2,6 +2,8 @@
 
 [English](README.md) · 简体中文
 
+[![npm](https://img.shields.io/npm/v/dsh-window-clone)](https://www.npmjs.com/package/dsh-window-clone)
+
 **再开一个 DeepSeek Harness 视图，两处同时干活。**
 
 `dsh-window-clone` 是 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的插件，把"再开一份完整 Harness"变成一次点击。在设置里输入窗口名，点「创建窗口」，就得到一个独立的 Harness 窗口 —— 已经登录、独立于原窗口、标题由你决定。两个窗口驱动同一个 Harness —— 同一份会话、同一份工作区，实时同步 —— 但各自保留自己的面板布局，所以可以一边全屏文件、一边全屏终端，各就各位。
@@ -43,8 +45,24 @@ dsh plugin --profile web add git+https://github.com/JhengFire/dsh-window-clone.g
 ## 安装
 
 ```bash
-dsh plugin --profile web add git+https://github.com/JhengFire/dsh-window-clone.git
+dsh plugin --profile web add dsh-window-clone
 dsh web
+```
+
+重启 Harness（或重新运行 `dsh web`），打开设置 —— **独立窗口** 会出现在 *市场* 和 *MCP* 之间。
+
+### 其他安装方式
+
+从 GitHub 安装（用于 registry 上还没有的版本）：
+
+```bash
+dsh plugin --profile web add git+https://github.com/JhengFire/dsh-window-clone.git
+```
+
+锁定某个版本：
+
+```bash
+dsh plugin --profile web add git+https://github.com/JhengFire/dsh-window-clone.git#v1.0.0
 ```
 
 从本地目录安装：
@@ -53,7 +71,13 @@ dsh web
 dsh plugin --profile web add ./dsh-window-clone
 ```
 
-重启 Harness（或重新运行 `dsh web`），打开设置 —— **独立窗口** 会出现在 *市场* 和 *MCP* 之间。
+### 国内网络加速
+
+包会自动同步到 npmmirror，直接用国内镜像安装即可：
+
+```bash
+npm install dsh-window-clone --registry=https://registry.npmmirror.com
+```
 
 ## 原理
 
