@@ -4,9 +4,11 @@ English · [简体中文](README.zh-CN.md)
 
 [![npm](https://img.shields.io/npm/v/dsh-window-clone)](https://www.npmjs.com/package/dsh-window-clone) [![downloads](https://img.shields.io/npm/dm/dsh-window-clone)](https://www.npmjs.com/package/dsh-window-clone) [![license](https://img.shields.io/github/license/JhengFire/dsh-window-clone)](LICENSE) [![release](https://img.shields.io/github/v/release/JhengFire/dsh-window-clone)](https://github.com/JhengFire/dsh-window-clone/releases)
 
-**Open a second view of DeepSeek Harness and work in two places at once.**
+**Open a second window onto the same DeepSeek Harness.**
 
-`dsh-window-clone` is a [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) plugin that turns "open another full Harness" into one click. Type a window name in Settings, press **Create window**, and a separate Harness window appears — already signed in, independent of the original, with a title you chose. Both windows drive the same Harness — same sessions, same workspace, live — and each keeps its own panel layout, so each can put a different panel into full screen and stay there.
+A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) plugin that opens another window onto the Harness you are already running. Type a name in Settings, press **Create window**, and a second window appears — already signed in, with a title you chose.
+
+It is a view, not a copy: both windows drive the same Harness, so sessions, messages and the workspace are live and identical in each. What you gain is **two places to watch and act** — files in one, terminal in the other, each full-screened — and neither loses your place when you switch.
 
 ```bash
 dsh plugin --profile web add dsh-window-clone
@@ -28,9 +30,9 @@ A second window removes the switching: one window on the files, one on the termi
 2. Type a name — or leave it empty.
 3. Press **Create window**.
 
-A new window opens, titled with the name you typed — or `Harness clone 01`, `Harness clone 02`, … when you left it blank. It is already signed in, it is not a child of the window you opened it from, and closing either window leaves the other alone.
+A new window opens, titled with the name you typed — or `Harness clone 01`, `Harness clone 02`, … when you left it blank. It is already signed in. The windows are independent in **lifetime, not in data**: closing one leaves the other running, but both are showing the same Harness.
 
-Every window is a full Harness. Put the files panel in one and the terminal in the other, then full-screen each panel, and you have two focused workspaces instead of one crowded one.
+Put the files panel in one window and the terminal in the other, full-screen each, and you have two focused surfaces on one job instead of one crowded window.
 
 ## Features
 
@@ -39,7 +41,7 @@ Every window is a full Harness. Put the files panel in one and the terminal in t
 - **Live in both windows** — sessions, messages and the workspace stay in sync as you work
 - **Per-window panel layout** — each window keeps its own arrangement, and can full-screen a different panel
 - **Already signed in** — the new window opens as an authenticated session without a second login
-- **Creation history** — the settings page remembers the windows you have created
+- **Recent names** — the settings page remembers the names you last used, so the next window is one click away
 - **English and 简体中文**
 
 Panel full screen is DSH's own control, at the top-right corner of the right-hand panel; this plugin does not add another.
@@ -129,7 +131,7 @@ So a window is not a copy of your work; it is another place to look at and act o
 
 **One Harness instance, one machine.** The plugin opens windows on the Host that serves it; it does not coordinate windows across machines.
 
-**A native window per panel is not possible here.** The desktop shell, `deepseek-harness.exe`, is a packaged Electron app that always loads its own `app.asar` and ignores an external application path — handed one, it exits immediately, which was verified directly. So this plugin duplicates the whole Harness instead and pairs it with DSH's built-in full screen, which reaches the same practical result: one thing per window.
+**A native window per panel is not possible here.** The desktop shell, `deepseek-harness.exe`, is a packaged Electron app that always loads its own `app.asar` and ignores an external application path — handed one, it exits immediately, which was verified directly. So this plugin opens a window onto the same Harness instead, and pairs it with DSH's built-in full screen. That is the one thing it buys you over DSH alone: a second surface, not a second instance.
 
 ## Troubleshoot
 

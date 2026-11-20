@@ -4,9 +4,11 @@
 
 [![npm](https://img.shields.io/npm/v/dsh-window-clone)](https://www.npmjs.com/package/dsh-window-clone)
 
-**再开一个 DeepSeek Harness 视图，两处同时干活。**
+**给同一个 DeepSeek Harness 再开一个窗口。**
 
-`dsh-window-clone` 是 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的插件，把"再开一份完整 Harness"变成一次点击。在设置里输入窗口名，点「创建窗口」，就得到一个独立的 Harness 窗口 —— 已经登录、独立于原窗口、标题由你决定。两个窗口驱动同一个 Harness —— 同一份会话、同一份工作区，实时同步 —— 但各自保留自己的面板布局，所以可以一边全屏文件、一边全屏终端，各就各位。
+[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的插件，给你正在运行的这个 Harness 再开一个窗口。在设置里输入窗口名，点「创建窗口」，就多一个已经登录、标题随你定的窗口。
+
+它是**视图，不是副本**：两个窗口驱动同一个 Harness，会话、消息、工作区在两边实时同步、完全一致。它给你的价值是**两处同时看、同时操作** —— 一边文件、一边终端，各自全屏 —— 切换时不会丢失位置。
 
 ```bash
 dsh plugin --profile web add dsh-window-clone
@@ -28,9 +30,9 @@ dsh plugin --profile web add dsh-window-clone
 2. 输入窗口名 —— 或者留空
 3. 点 **创建窗口**
 
-新窗口出现，标题就是你填的名字；留空则自动叫 `Harness分身01`、`Harness分身02`…… 它已经登录，不是原窗口的子窗口，关掉任意一个都不影响另一个。
+新窗口出现，标题就是你填的名字；留空则自动叫 `Harness分身01`、`Harness分身02`…… 它已经登录。两个窗口独立的是**生命周期，不是数据**：关掉一个，另一个照常运行，但两边看到的始终是同一个 Harness。
 
-每个窗口都是完整的 Harness。一个放文件面板，一个放终端，各自全屏，于是你有两个专注的工作区，而不是一个挤满了的。
+一个窗口放文件面板，一个窗口放终端，各自全屏 —— 同一件事，两块专注的界面，而不是一个挤满了的窗口。
 
 ## 功能
 
@@ -39,7 +41,7 @@ dsh plugin --profile web add dsh-window-clone
 - **两个窗口实时同步** —— 会话、消息、工作区随操作即时反映到另一窗口
 - **各窗口自有面板布局** —— 每个窗口保留自己的排布，可以各自全屏不同的面板
 - **打开即已登录** —— 不需要二次登录
-- **创建记录** —— 设置页会记住你建过哪些窗口
+- **最近用过的名字** —— 设置页记住你上次起的名字，下次一键再用
 - **English 与 简体中文**
 
 右侧面板全屏是 DSH 自带的功能（面板右上角那个按钮），不是这个插件加的。
@@ -129,7 +131,7 @@ spawn(shellExe, [], { detached: true, stdio: 'ignore' }).unref()
 
 **一个 Harness 实例，一台机器。** 窗口开在提供服务的 Host 上，不跨机器协同。
 
-**"每个面板一个原生窗口"在这里做不到。** 桌面壳 `deepseek-harness.exe` 是打包的 Electron 应用，永远加载自己的 `app.asar`，不接受外部应用路径 —— 传给它自定义路径会立刻退出（这一点直接验证过）。所以本插件改为复制整个 Harness，再配合 DSH 自带的全屏，得到同样的实际效果：一个窗口一件事。
+**"每个面板一个原生窗口"在这里做不到。** 桌面壳 `deepseek-harness.exe` 是打包的 Electron 应用，永远加载自己的 `app.asar`，不接受外部应用路径 —— 传给它自定义路径会立刻退出（这一点直接验证过）。所以本插件改为给同一个 Harness 开窗口，再配合 DSH 自带的全屏。这正是它比 DSH 单窗口多出来的唯一东西：第二个界面，而不是第二个实例。
 
 ## 排错
 
