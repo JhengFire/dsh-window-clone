@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "title": "Separate window",
+    "description": "Open a second Harness window so two windows can work side by side."
+  },
+  "menu": {
+    "newWindow": "New Harness window",
+    "newWindowHint": "Open a second full Harness; the two windows work independently"
+  },
+  "notice": {
+    "failed": "The new window could not be opened"
+  }
+}

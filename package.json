@@ -1,0 +1,64 @@
+{
+  "name": "dsh-window-clone",
+  "version": "1.0.0",
+  "description": "Open a second DeepSeek Harness window and work in both at the same time.",
+  "main": "./lib/index.mjs",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./lib/index.mjs",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.1-rc.3"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-locale"
+      ],
+      "platform": "web"
+    }
+  },
+  "files": [
+    "lib",
+    "locale",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "@deepseek-ai/schemastery": "^3.18.2",
+    "react": "^18.2.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness-plugin",
+    "multi-window",
+    "separate-window",
+    "clone",
+    "workspace",
+    "productivity"
+  ],
+  "author": "JhengFire",
+  "homepage": "https://github.com/JhengFire/dsh-window-clone#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JhengFire/dsh-window-clone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JhengFire/dsh-window-clone/issues"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "title": "独立窗口",
+    "description": "再开一个 Harness 窗口，两个窗口可以分开操作。"
+  },
+  "menu": {
+    "newWindow": "新开一个 Harness 窗口",
+    "newWindowHint": "再开一份完整的 Harness，两个窗口可以分开操作"
+  },
+  "notice": {
+    "failed": "无法打开新窗口"
+  }
+}

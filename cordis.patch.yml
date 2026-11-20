@@ -1,0 +1,9 @@
+# dsh-separate-window bundle patch: inserts the dual-face plugin row into the
+# web/desktop profile roster. The node half (exports ".") runs in the host
+# process and owns the /detach/* HTTP routes plus the window launcher; the
+# dsh.client declaration in package.json loads the browser half
+# (exports "./client") in the Web GUI, where it injects the Detach action into
+# every right-sidebar tab menu and renders the detached direct-view page.
+- insert:
+    - id: window-clone
+      name: dsh-window-clone
