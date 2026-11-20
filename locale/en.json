@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Separate window",
-    "description": "Open a second Harness window so two windows can work side by side."
+    "title": "Separate windows",
+    "description": "Open another window onto the same Harness and work in two places at once."
   },
   "menu": {
     "newWindow": "New Harness window",
-    "newWindowHint": "Open a second full Harness; the two windows work independently"
+    "newWindowHint": "Open another window onto this Harness; both stay in sync"
   },
   "notice": {
     "failed": "The new window could not be opened"
