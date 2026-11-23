@@ -1,6 +1,6 @@
 {
   "name": "dsh-window-clone",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Open a second DeepSeek Harness window and work in both at the same time.",
   "main": "./lib/index.mjs",
   "icon": "./icon.svg",
